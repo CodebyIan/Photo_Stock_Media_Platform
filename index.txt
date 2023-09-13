@@ -1,0 +1,263 @@
+
+Photo Stock - A large stock library
+
+This is a stock photos app made by codewithsadee
+
+
+
+#---------- HEADER ----------#
+
+aria-label = Open menu
+<span class="material-symbols-outlined" aria-hidden="true">menu</span>
+
+Pixstock
+
+aria-label = Close search
+<span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+
+<span class="material-symbols-outlined leading-icon" aria-hidden="true">search</span>
+
+placeholder = Search...
+
+<span class="material-symbols-outlined" aria-hidden="true">close</span>
+
+aria-label = Submit search
+
+<span class="material-symbols-outlined" aria-hidden="true">search</span>
+
+<span class="material-symbols-outlined" aria-hidden="true">image</span>
+Photos
+
+<span class="material-symbols-outlined" aria-hidden="true">videocam</span>
+Videos
+
+<span class="material-symbols-outlined leading-icon" aria-hidden="true">history</span>
+
+Nature
+
+Tree
+
+Man portrait
+
+Mountain
+
+aria-label = Open search
+
+<span class="material-symbols-outlined" aria-hidden="true">search</span>
+
+aria-label = Switch theme
+
+<span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
+
+<span class="material-symbols-outlined light-icon" aria-hidden="true">light_mode</span>
+
+
+
+#---------- NAVIGATION ----------#
+
+aria-label = Close menu
+
+<span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+
+Pixstock
+
+<span class="material-symbols-outlined leading-icon" aria-hidden="true">home</span>
+Home
+
+<span class="material-symbols-outlined leading-icon" aria-hidden="true">image</span>
+Photos
+
+<span class="material-symbols-outlined leading-icon" aria-hidden="true">videocam</span>
+Videos
+
+<span class="material-symbols-outlined leading-icon" aria-hidden="true">auto_awesome_mosaic</span>
+Collections
+
+<span class="material-symbols-outlined leading-icon" aria-hidden="true">favorite</span>
+Favorite
+
+
+
+
+#---------- BANNER ----------#
+
+aria-label = Banner
+
+High quality stock photos for free!
+
+Explore our exceptional collection of high-quality stock photos.
+
+Explore Now
+
+Top rated stock Videos for free!
+
+Our curated selection videos is sure to inspire and captivate.
+
+Best collections with best medias!
+
+Discover a treasure trove of stunning images, captivating videos.
+
+
+
+
+#---------- FEATURED PHOTOS ----------#
+
+Featured photos
+
+aria-label = Add to favorite
+
+<span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+
+Explore more
+
+
+
+#---------- POPULAR VIDEO ----------#
+
+Popular videos
+
+aria-label = Add to favorite
+<span class="material-symbols-outlined leading-icon" aria-hidden="true">favorite</span>
+
+<span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+
+Explore more
+
+
+
+#---------- COLLECTION ----------#
+
+Featured collections
+
+Leaves
+59 media
+
+Online Shopping
+48 media
+
+Teamwork
+30 media
+
+Parks
+34 media
+
+Horror
+61 media
+
+Shake Hands
+42 media
+
+Dance
+59 media
+
+Law
+30 media
+
+Business Meetings
+34 media
+
+Apples
+50 media
+
+Massages
+26 media
+
+Classrooms
+33 media
+
+More collections
+
+
+
+#---------- FOOTER ----------#
+
+Pixstock
+
+Pixstock is a stock photo app developed by codewithsadee and all Photos and Videos provided by Pexels.
+
+Follow us on
+
+href = https://youtube.com/@codewithsadee
+YouTube
+
+href = https://github.com/codewithsadee
+GitHub
+
+href = https://twitter.com/codewithsadee
+Twitter
+
+
+
+#---------- ALL PHOTO PAGE ----------#
+
+Curated photos - Pixstock
+
+Curated photos
+
+<span class="material-symbols-outlined leading-icon" aria-hidden="true">check</span>
+
+Orientation
+
+<span class="material-symbols-outlined trailing-icon" aria-hidden="true">arrow_drop_down</span>
+
+<span class="material-symbols-outlined trailing-icon" aria-hidden="true">close</span>
+
+Portrait
+Landscape
+Square
+
+Size
+
+Small
+Medium
+Large
+
+Color
+
+
+
+#---------- PHOTO DETAIL PAGE ----------#
+
+Photo detail - Pixstock
+
+aria-label = Back to previous page
+<span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+
+Download
+<span class="material-symbols-outlined" aria-hidden="true">arrow_drop_down</span>
+
+Original
+Large 2x
+Large
+Medium
+Small
+
+aria-label = add to favorite
+<span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+
+Photograph by 
+Hebert Santos
+
+More like this
+
+
+
+#---------- POPULAR VIDEO PAGE ----------#
+
+Popular videos - Pixstock
+
+Popular videos
+
+
+
+#---------- POPULAR COLLECTION PAGE ----------#
+
+Featured collections - Pixstock
+
+Featured collections
+
+
+
+#---------- FAVORITE PAGE ----------#
+
+Favorites - Pixstock
