@@ -1,6 +1,6 @@
 /**
- * @copyright codewithsadee 2023
- * @author sadee <codewithsadee@gmail.com>
+ * @copyright Ian Mucheru 2023
+ * @author Ian <imucheru.im@gmail.com>
  */
 
 "use strict";

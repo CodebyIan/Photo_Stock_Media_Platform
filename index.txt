@@ -1,7 +1,7 @@
 
-Photo Stock - A large stock library
+Pixxar - A large stock library
 
-This is a stock photos app made by codewithsadee
+This is a stock photos app by Ian Mucheru
 
 
 
@@ -10,7 +10,7 @@ This is a stock photos app made by codewithsadee
 aria-label = Open menu
 <span class="material-symbols-outlined" aria-hidden="true">menu</span>
 
-Pixstock
+Pixxar
 
 aria-label = Close search
 <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
@@ -53,13 +53,13 @@ aria-label = Switch theme
 
 
 
-#---------- NAVIGATION ----------#
+#---------- NAVBAR ----------#
 
 aria-label = Close menu
 
 <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
 
-Pixstock
+Pixxar
 
 <span class="material-symbols-outlined leading-icon" aria-hidden="true">home</span>
 Home
@@ -171,26 +171,26 @@ More collections
 
 #---------- FOOTER ----------#
 
-Pixstock
+Pixxar
 
-Pixstock is a stock photo app developed by codewithsadee and all Photos and Videos provided by Pexels.
+Pixxar is a stock photo app developed by codewithsadee and all Photos and Videos provided by Pexels.
 
-Follow us on
+Follow Me On
 
-href = https://youtube.com/@codewithsadee
+href = https://youtube.com
 YouTube
 
-href = https://github.com/codewithsadee
+href = https://github.com
 GitHub
 
-href = https://twitter.com/codewithsadee
+href = https://twitter.com
 Twitter
 
 
 
 #---------- ALL PHOTO PAGE ----------#
 
-Curated photos - Pixstock
+Curated photos -Pixxar
 
 Curated photos
 
@@ -218,7 +218,7 @@ Color
 
 #---------- PHOTO DETAIL PAGE ----------#
 
-Photo detail - Pixstock
+Photo detail - Pixxar
 
 aria-label = Back to previous page
 <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
@@ -244,7 +244,7 @@ More like this
 
 #---------- POPULAR VIDEO PAGE ----------#
 
-Popular videos - Pixstock
+Popular videos - Pixxar
 
 Popular videos
 
@@ -252,7 +252,7 @@ Popular videos
 
 #---------- POPULAR COLLECTION PAGE ----------#
 
-Featured collections - Pixstock
+Featured collections - PiPixxar
 
 Featured collections
 
@@ -260,4 +260,4 @@ Featured collections
 
 #---------- FAVORITE PAGE ----------#
 
-Favorites - Pixstock
+Favorites - Pixxar

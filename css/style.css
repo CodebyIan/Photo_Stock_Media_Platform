@@ -241,7 +241,7 @@
 }
 
 li {
-  list-style-type: none;
+  list-style: none;
 }
 
 a,
@@ -256,6 +256,10 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img {
+  height: auto;
 }
 
 input,
@@ -277,7 +281,7 @@ button {
 html {
   font-family: var(--ff-primary);
   font-size: var(--fs-base);
-  scroll-behavior: smooth scroll;
+  scroll-behavior: smooth;
   -webkit-tap-hightlight-color: transparent;
 }
 
@@ -288,6 +292,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  height: 300vh;
   transition: opacity var(--motion-duration-medium-2)
     var(--motion-easing-linear);
   /* opacity: 0; */
@@ -401,54 +406,287 @@ button:disabled {
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
+.material-symbols-outlined {
+  display: block;
+  width: 1em;
+  height: 1em;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+:has(> .state__layer) {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ripple,
+.state__layer {
+  background-color: var(--state-layer-bg);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.state__layer {
+  border-radius: inherit;
+  inset: 0;
+  opacity: 0;
+  transition: var(--motion-duration-short-2) var(--motion-easing-linear);
+}
+
+:has(> .state__layer):hover > .state__layer {
+  opacity: 0.08;
+}
+
+:has(> .state__layer):is(:focus, :focus-visible, :active) > .state__layer {
+  opacity: 0.12;
+}
+
+.ripple {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transform-origin: center;
+  border-radius: var(--radius-circle);
+  opacity: 0.12;
+  animation: ripple 800ms var(--motion-easing-standard) forwards;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(2.5);
+  }
+}
 
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
 
-/**
- * Icon button
- */
+/** Icon button **/
+.icon__btn {
+  color: var(--on-surface-variant);
+  --state-layer-bg: var(--on-surface-variant);
+  position: relative;
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-circle);
+  overflow: hidden;
+}
 
-/**
- * Segment button
- */
+.icon__btn > .state__layer {
+  inset: 4px;
+}
 
-/**
- * Split btn
- */
+.icon__btn > .ripple {
+  width: 40px;
+  height: 40px;
+  animation: icon-button-ripple 200ms var(--motion-easing-standard) forwards;
+}
 
-/**
- * Search view
- */
+@keyframes icon-button-ripple {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
-/**
- * List
- */
+/** Split btn **/
 
-/**
- * Navigation
- */
+/** Search view **/
+.search__view {
+  background-color: var(--surface-container-high);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--motion-duration-short-2) var(--motion-easing-standard);
+  transition-property: opacity, visibility;
+}
 
-/**
- * Button
- */
+.search__view.active {
+  opacity: 1;
+  visibility: visible;
+}
 
-/**
- * Card
- */
+.input__wrapper .leading__icon {
+  display: none;
+}
 
-/**
- * Menu
- */
+.search__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 4px;
+  height: 72px;
+  border-block-end: 1px solid var(--outline);
+}
 
-/**
- * Filter chip
- */
+.search__bar .icon__btn {
+  flex-shrink: 0;
+}
+
+.search__bar .input__wrapper,
+.search__bar .input__field {
+  height: 100%;
+}
+
+.search__bar .input__wrapper {
+  flex-grow: 1;
+}
+
+.search__bar .input__wrapper:has(:placeholder-shown) + .icon__btn {
+  display: none;
+}
+
+.search__bar .input__field {
+  color: var(--on-surface);
+}
+
+.search__bar .input__field::placeholder {
+  color: var(--on-surface-variant);
+}
+
+.search__bar .input__field::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search__bar .search__btn {
+  --state-layer-bg: var(--primary);
+  color: var(--primary);
+}
+
+.search__view-content .btn__group {
+  margin: 16px;
+}
+
+/** Segment button **/
+.btn__group {
+  display: flex;
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.btn__group .btn__segment {
+  color: var(--on-surface);
+  --state-layer-bg: var(--on-surface);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 12px;
+  height: 40px;
+  flex-grow: 1;
+}
+
+.btn__group .btn__segment:not(:last-child) {
+  border-inline-end: 1px solid var(--outline);
+}
+
+.btn__group .btn__segment .material-symbols-outlined {
+  font-size: 1.8rem;
+}
+
+.btn__group .btn__segment.selected {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+  --state-layer-bg: var(--on-secondary-container);
+}
+
+/** List **/
+.search__view-content .list {
+  padding-block: 8px;
+}
+
+.list .list__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-inline: 16px 24px;
+  padding-block: 8px;
+  height: 48px;
+  width: 100%;
+  --state-layer-bg: var(--on-surface);
+}
+
+.list__item .leading__icon {
+  font-size: 1.8rem;
+  color: var(--on-surface-variant);
+}
+
+.list__item .text {
+  color: var(--on-surface);
+}
+
+/** Navigation **/
+
+/** Button **/
+
+/** Card **/
+
+/** Menu **/
+
+/** Filter chip **/
 
 /*-----------------------------------*\
   #TOP APP BAR
 \*-----------------------------------*/
+.top__app-bar {
+  background-color: var(--surface);
+  display: flex;
+  align-items: center;
+  padding-inline: 4px;
+  height: var(--top-app-bar-height);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  transition: background-color var(--motion-duration-short-2)
+    var(--motion-easing-linear);
+}
+
+.top__app-bar.active {
+  background-color: var(--surface-container);
+}
+
+.logo {
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: var(--weight-medium);
+  line-height: 28px;
+  letter-spacing: -0.5px;
+}
+
+.top__app-bar .logo {
+  margin-inline: 4px auto;
+}
+
+.divider {
+  height: 1px;
+  max-width: 100%;
+  background-color: var(--outline-variant);
+}
+
+.search__view-content .divider {
+  margin-inline: 16px;
+}
+
+[data-theme="light"] .theme__btn .light-icon,
+[data-theme="dark"] .theme__btn .dark-icon {
+  display: none;
+}
 
 /*-----------------------------------*\
   #SCRIM

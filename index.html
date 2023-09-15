@@ -4,7 +4,7 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content=" large stock library" />
+    <meta name="title" content=" Photo stock library" />
     <meta
       name="description"
       content="This is a stock photos app made by Ian Mucheru"
@@ -35,7 +35,147 @@
     <script src="./js/app.js" type="module"></script>
     <script src="./js/search.js" type="module"></script>
 
-    <title>Photo Stock</title>
+    <title>Pixxar</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Header -->
+    <header class="top__app-bar" data-header>
+      <button
+        class="icon__btn"
+        aria-label="Open menu"
+        data-nav-toggler
+        data-ripple
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+
+        <!-- <div class="ripple"></div> -->
+        <div class="state__layer"></div>
+      </button>
+
+      <a href="#" class="logo">Pixxar</a>
+
+      <div class="search__view" data-search-view>
+        <div class="search__bar">
+          <button
+            class="icon__btn search__open"
+            aria-label="Close search"
+            data-search-toggler
+            data-ripple
+          >
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >arrow_back</span
+            >
+
+            <div class="state__layer"></div>
+          </button>
+
+          <div class="input__wrapper">
+            <input
+              type="search"
+              name="search"
+              placeholder="Search ..."
+              class="input__field body__large"
+              autocomplete="off"
+              data-search-field
+            />
+          </div>
+
+          <button
+            class="icon__btn"
+            aria-label="Clear search"
+            data-search-clear-btn
+            data-ripple
+          >
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >close</span
+            >
+
+            <div class="state__layer"></div>
+          </button>
+
+          <button
+            class="icon__btn search__btn"
+            aria-label="Submit search"
+            data-search-toggler
+            data-ripple
+            data-search-btn
+          >
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >search</span
+            >
+
+            <div class="state__layer"></div>
+          </button>
+
+          <div class="state__layer"></div>
+        </div>
+
+        <div class="search__view-content">
+          <div class="btn__group" data-segment="search">
+            <button
+              class="btn__segment selected"
+              data-ripple
+              data-segment-btn
+              data-segment-value="photos"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >image</span
+              >
+
+              <div class="label__large text">Photos</div>
+
+              <div class="state__layer"></div>
+            </button>
+
+            <button
+              class="btn__segment"
+              data-ripple
+              data-segment-btn
+              data-segment-value="Videos"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >videocam</span
+              >
+
+              <div class="label__large text">Videos</div>
+
+              <div class="state__layer"></div>
+            </button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="list" data-search-list></div>
+        </div>
+      </div>
+
+      <button
+        class="icon__btn search__open"
+        aria-label="Open search"
+        data-search-toggler
+        data-ripple
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">search</span>
+
+        <div class="state__layer"></div>
+      </button>
+
+      <button
+        class="icon__btn theme__btn"
+        aria-label="Switch theme"
+        data-theme-toggler
+        data-ripple
+      >
+        <span class="material-symbols-outlined dark-icon" aria-hidden="true"
+          >dark_mode</span
+        >
+
+        <span class="material-symbols-outlined light-icon" aria-hidden="true"
+          >light_mode</span
+        >
+
+        <div class="state__layer"></div>
+      </button>
+    </header>
+  </body>
 </html>
