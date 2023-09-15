@@ -465,6 +465,54 @@ button:disabled {
   #COMPONENT
 \*-----------------------------------*/
 
+/*-----------------------------------*\
+  #TOP APP BAR
+\*-----------------------------------*/
+.top__app-bar {
+  background-color: var(--surface);
+  display: flex;
+  align-items: center;
+  padding-inline: 4px;
+  height: var(--top-app-bar-height);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+  transition: background-color var(--motion-duration-short-2)
+    var(--motion-easing-linear);
+}
+
+.top__app-bar.active {
+  background-color: var(--surface-container);
+}
+
+.logo {
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: var(--weight-medium);
+  line-height: 28px;
+  letter-spacing: -0.5px;
+}
+
+.top__app-bar .logo {
+  margin-inline: 4px auto;
+}
+
+.divider {
+  height: 1px;
+  max-width: 100%;
+  background-color: var(--outline-variant);
+}
+
+.search__view-content .divider {
+  margin-inline: 16px;
+}
+
+[data-theme="light"] .theme__btn .light-icon,
+[data-theme="dark"] .theme__btn .dark-icon {
+  display: none;
+}
+
 /** Icon button **/
 .icon__btn {
   color: var(--on-surface-variant);
@@ -701,6 +749,25 @@ button:disabled {
   font-variation-settings: "FILL" 1;
 }
 
+/*-----------------------------------*\
+  #SCRIM
+\*-----------------------------------*/
+.scrim {
+  position: fixed;
+  inset: 0;
+  background-color: var(--scrim);
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--motion-duration-short-2) var(--motion-easing-linear);
+  transition-property: opacity, visibility;
+}
+
+.scrim.active {
+  opacity: 0.5;
+  visibility: visible;
+}
+
 /** Button **/
 
 /** Card **/
@@ -708,58 +775,6 @@ button:disabled {
 /** Menu **/
 
 /** Filter chip **/
-
-/*-----------------------------------*\
-  #TOP APP BAR
-\*-----------------------------------*/
-.top__app-bar {
-  background-color: var(--surface);
-  display: flex;
-  align-items: center;
-  padding-inline: 4px;
-  height: var(--top-app-bar-height);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 4;
-  transition: background-color var(--motion-duration-short-2)
-    var(--motion-easing-linear);
-}
-
-.top__app-bar.active {
-  background-color: var(--surface-container);
-}
-
-.logo {
-  color: var(--primary);
-  font-size: 2.5rem;
-  font-weight: var(--weight-medium);
-  line-height: 28px;
-  letter-spacing: -0.5px;
-}
-
-.top__app-bar .logo {
-  margin-inline: 4px auto;
-}
-
-.divider {
-  height: 1px;
-  max-width: 100%;
-  background-color: var(--outline-variant);
-}
-
-.search__view-content .divider {
-  margin-inline: 16px;
-}
-
-[data-theme="light"] .theme__btn .light-icon,
-[data-theme="dark"] .theme__btn .dark-icon {
-  display: none;
-}
-
-/*-----------------------------------*\
-  #SCRIM
-\*-----------------------------------*/
 
 /*-----------------------------------*\
   #MAIN

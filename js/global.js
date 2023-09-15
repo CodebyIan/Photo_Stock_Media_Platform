@@ -5,8 +5,9 @@
 
 "use strict";
 
-/*** Import ***/
+/*** Imports ***/
 import { ripple } from "./utils/ripple.js";
+import { addEventOnElements } from "./utils/event.js";
 
 /*** Header On-Scroll State ***/
 const /** {NodeElement} */ $header = document.querySelector("[data-header]");
@@ -16,10 +17,19 @@ window.addEventListener("scroll", () => {
 });
 
 /*** Add Ripple Effect ***/
-const /** {NodeElement} */ $rippleElems =
-    document.querySelectorAll("[data-ripple]");
+const $rippleElems = document.querySelectorAll("[data-ripple]");
 
 $rippleElems.forEach(($rippleElem) => ripple($rippleElem));
+
+/*** Navbar Toggle For Mobile Screens ***/
+const $navTogglers = document.querySelectorAll("[data-nav-toggler]");
+const $navbar = document.querySelector("[data-navbar]");
+const $scrim = document.querySelector("[data-scrim]");
+
+addEventOnElements($navTogglers, "click", function () {
+  $navbar.classList.toggle("active");
+  $scrim.classList.toggle("active");
+});
 
 /*** Filter Function ***/
 window.filterObj = {};
