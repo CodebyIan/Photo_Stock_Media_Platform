@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
   <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8" />
@@ -177,5 +177,113 @@
         <div class="state__layer"></div>
       </button>
     </header>
+
+    <!-- NavBar -->
+    <nav class="navbar active" data-navbar>
+      <div class="navbar__header">
+        <button
+          class="icon__btn"
+          aria-label="Close menu"
+          data-ripple
+          data-nav-toggler
+        >
+          <span class="material-symbols-outlined" aria-hidden="true"
+            >arrow_back</span
+          >
+
+          <div class="state__layer"></div>
+        </button>
+
+        <a href="#" class="logo">Pixxar</a>
+      </div>
+
+      <ul class="drawer__list">
+        <li class="drawer__item">
+          <a href="#" class="drawer__link" data-drawer-link>
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >home</span
+            >
+
+            <span class="label__large">Home</span>
+
+            <div class="state__layer"></div>
+          </a>
+        </li>
+
+        <li class="drawer__item">
+          <a
+            href="./pages/photos/photos.html"
+            class="drawer__link"
+            data-drawer-link
+          >
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >image</span
+            >
+
+            <span class="label__large">Photos</span>
+
+            <div class="state__layer"></div>
+          </a>
+        </li>
+
+        <li class="drawer__item">
+          <a
+            href="./pages/videos/videos.html"
+            class="drawer__link"
+            data-drawer-link
+          >
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >videocam</span
+            >
+
+            <span class="label__large">Videos</span>
+
+            <div class="state__layer"></div>
+          </a>
+        </li>
+
+        <li class="drawer__item">
+          <a
+            href="./pages/collections/collection.html"
+            class="drawer__link"
+            data-drawer-link
+          >
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >auto_awesome_mosaic</span
+            >
+
+            <span class="label__large">Collections</span>
+
+            <div class="state__layer"></div>
+          </a>
+        </li>
+
+        <li class="drawer__item">
+          <a
+            href="./pages/favorite/favorite.html"
+            class="drawer__link"
+            data-drawer-link
+          >
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >favorite</span
+            >
+
+            <span class="label__large">Favorites</span>
+
+            <div class="state__layer"></div>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </body>
 </html>
