@@ -292,7 +292,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  height: 300vh;
   transition: opacity var(--motion-duration-medium-2)
     var(--motion-easing-linear);
   /* opacity: 0; */
@@ -465,6 +464,53 @@ button:disabled {
   #COMPONENT
 \*-----------------------------------*/
 
+/** Button **/
+.btn {
+  height: 40px;
+  max-width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-inline: 24px;
+  border-radius: var(--radius-full);
+  transition: box-shadow var(--motion-duration-short-2)
+    var(--motion-easing-linear);
+}
+
+.btn:hover {
+  box-shadow: var(--elevation-1);
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.btn__primary {
+  --state-layer-bg: var(--on-primary);
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+.btn__secondary {
+  --state-layer-bg: var(--on-secondary);
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+}
+
+.btn__tertiary {
+  --state-layer-bg: var(--on-tertiary);
+  background-color: var(--tertiary);
+  color: var(--on-tertiary);
+}
+
+/** Card **/
+
+/** Menu **/
+
+/** Filter chip **/
+
+/** Split btn **/
+
 /*-----------------------------------*\
   #TOP APP BAR
 \*-----------------------------------*/
@@ -524,7 +570,7 @@ button:disabled {
   display: grid;
   place-items: center;
   border-radius: var(--radius-circle);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .icon__btn > .state__layer {
@@ -545,8 +591,6 @@ button:disabled {
     transform: scale(1);
   }
 }
-
-/** Split btn **/
 
 /** Search view **/
 .search__view {
@@ -768,21 +812,165 @@ button:disabled {
   visibility: visible;
 }
 
-/** Button **/
-
-/** Card **/
-
-/** Menu **/
-
-/** Filter chip **/
-
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
+.main {
+  padding-block-start: calc(var(--top-app-bar-height));
+  flex-grow: 1;
+}
 
 /*-----------------------------------*\
   #BANNER
 \*-----------------------------------*/
+.banner {
+  display: flex;
+  gap: 16px;
+  padding-inline: 16px;
+  padding-block-end: 18px;
+  margin-block-end: 24px;
+  overflow-x: auto;
+  scroll-snap-type: inline mandatory;
+  scroll-snap-stop: always;
+  overscroll-behavior-x: contain;
+}
+
+.banner::-webkit-scrollbar {
+  height: 6px;
+}
+
+.banner::-webkit-scrollbar-track {
+  background-color: var(--surface-variant);
+  border-radius: var(--radius-full);
+}
+
+.banner::-webkit-scrollbar-thumb {
+  background-color: var(--on-surface-variant);
+  border-radius: var(--radius-full);
+}
+
+.banner::-webkit-scrollbar-button {
+  width: calc(25% - 28px);
+}
+
+.banner__card {
+  --gradient-direction: 180deg;
+  --primary-hsl: 178, 89%, 70%;
+  --secondary-hsl: 32, 100%, 85%;
+  --tertiary-hsl: 3, 100%, 92%;
+  position: relative;
+  height: 360px;
+  min-width: 100%;
+  border-radius: var(--radius-extra-large);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-margin-inline: 16px;
+  z-index: 1;
+}
+
+[data-theme="dark"] .banner__card {
+  --primary-hsl: 178, 100%, 16%;
+  --secondary-hsl: 38, 100%, 20%;
+  --tertiary-hsl: 356, 66%, 32%;
+}
+
+.banner__card.primary {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+.banner__card.secondary {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.banner__card.tertiary {
+  background-color: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+}
+
+.banner__card .card__content {
+  --gradient-hsl: var(--primary-hsl);
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-content: flex-end;
+  gap: 12px;
+  padding: 24px;
+  background-image: linear-gradient(
+    var(--gradient-direction),
+    hsl(var(--gradient-hsl), 0) 0%,
+    hsl(var(--gradient-hsl), 0.36) 24%,
+    hsl(var(--gradient-hsl), 0.64) 48%,
+    hsl(var(--gradient-hsl), 1) 68%
+  );
+}
+
+.banner__card.secondary .card__content {
+  --gradient-hsl: var(--secondary-hsl);
+}
+
+.banner__card.tertiary .card__content {
+  --gradient-hsl: var(--tertiary-hsl);
+}
+
+.banner__card .card__title {
+  width: 16ch;
+}
+
+.banner__card .card__text {
+  display: none;
+}
+
+.banner__card .card__grid {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  right: -16px;
+  bottom: 28%;
+  display: grid;
+  gap: 12px;
+  grid-template-areas:
+    "b1 b1 b2 b2 b3 b3 b3 b3"
+    "b1 b1 b2 b2 b3 b3 b3 b3"
+    "b4 b4 b2 b2 b3 b3 b3 b3"
+    "b4 b4 b5 b5 b5 b6 b6 b6";
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  z-index: -1;
+}
+
+.banner__card .card__banner {
+  border-radius: var(--radius-large);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.banner__card .card__banner .video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scale: 1.05;
+}
+
+.banner__card.primary .card__banner {
+  background-color: var(--on-primary-container);
+  box-shadow: 0 2px 2px -1px #00201f;
+}
+
+.banner__card.secondary .card__banner {
+  background-color: var(--on-secondary-container);
+  box-shadow: 0 2px 2px -1px #2a1800;
+}
+
+.banner__card.tertiary .card__banner {
+  background-color: var(--on-tertiary-container);
+  box-shadow: 0 2px 2px -1px #410006;
+}
 
 /*-----------------------------------*\
   #CURATED PHOTOS & POPULAR VIDEO
