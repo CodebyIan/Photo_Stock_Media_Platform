@@ -169,7 +169,7 @@
   --surface-variant: var(--light-surface-variant);
   --on-surface-variant: var(--light-on-surface-variant);
   --surface-container-high: var(--light-surface-container-high);
-  --surface-container-highest: var(--light-surfacr-container-high);
+  --surface-container-highest: var(--light-surface-container-highest);
   --surface-container: var(--light-surface-container);
   --outline: var(--light-outline);
   --outline-variant: var(--light-outline-variant);
@@ -204,7 +204,7 @@
   --surface-variant: var(--dark-surface-variant);
   --on-surface-variant: var(--dark-on-surface-variant);
   --surface-container-high: var(--dark-surface-container-high);
-  --surface-container-highest: var(--dark-surfacr-container-high);
+  --surface-container-highest: var(--dark-surface-container-highest);
   --surface-container: var(--dark-surface-container);
   --outline: var(--dark-outline);
   --outline-variant: var(--dark-outline-variant);
@@ -460,6 +460,98 @@ button:disabled {
   }
 }
 
+.section {
+  position: relative;
+  margin-block-end: 24px;
+}
+
+.container {
+  padding-inline: 16px;
+}
+
+.section__title {
+  margin-block-end: 12px;
+}
+
+.media__grid {
+  --column-count: 2;
+  --column-gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
+  gap: var(--column-gap);
+  overflow: hidden;
+}
+
+.img__cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--column-gap);
+  align-self: flex-start;
+}
+
+.overlay__btn {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  padding-block: 48px 24px;
+  display: grid;
+  place-items: center;
+  background-image: linear-gradient(
+    0deg,
+    var(--background) 0%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.icon__btn.small {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+}
+
+.icon__btn.small .material-symbols-outlined {
+  font-size: 1.8rem;
+}
+
+.icon__btn.small > .ripple {
+  width: 32px;
+  height: 32px;
+}
+
+.icon__btn.active {
+  --state-layer-bg: var(--primary);
+  color: var(--primary);
+}
+
+.icon__btn.active .material-symbols-outlined {
+  font-variation-settings: "FILL" 1;
+}
+
+.skeleton {
+  background-color: var(--surface-container-highest);
+  border-radius: var(--radius-medium);
+  aspect-ratio: 2/3;
+  animation: skeleton-loading 1000ms linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -504,6 +596,52 @@ button:disabled {
 }
 
 /** Card **/
+.card {
+  --state-layer-bg: var(--on-surface);
+  position: relative;
+  width: 100%;
+  height: max-content;
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  transition: box-shadow var(--motion-duration-short-2),
+    var(--motion-easing-linear);
+}
+
+.card:hover {
+  box-shadow: var(--elevation-1);
+}
+
+.card > .state__layer {
+  pointer-events: all;
+}
+
+.card .card__banner {
+  aspect-ratio: var(--width) / var(--height);
+}
+
+.card .card__content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(
+    (180deg, transparent 0%, hsla(0, 0%, 0%, 0.75))
+  );
+  pointer-events: none;
+  padding: 5px;
+  z-index: 2;
+}
+
+.card .icon__btn {
+  --state-layer-bg: var(--light-inverse-on-surface);
+  pointer-events: all;
+  color: var(--light-inverse-on-surface);
+  margin-inline-start: auto;
+}
+
+.card .icon__btn.active {
+  color: var(--light-inverse-primary);
+  --state-layer-bg: var(--light-inverse-primary);
+}
 
 /** Menu **/
 
@@ -975,6 +1113,9 @@ button:disabled {
 /*-----------------------------------*\
   #CURATED PHOTOS & POPULAR VIDEO
 \*-----------------------------------*/
+:where(.featured__photo, .popular__videos) .column {
+  margin-block-end: -800px;
+}
 
 /*-----------------------------------*\
   #COLLECTION

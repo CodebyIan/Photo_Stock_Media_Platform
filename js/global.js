@@ -33,3 +33,13 @@ addEventOnElements($navTogglers, "click", function () {
 
 /*** Filter Function ***/
 window.filterObj = {};
+
+/*** Initial Favorite Object In Local Storage ***/
+if (!window.localStorage.getItem("favorite")) {
+  const favoriteObj = {
+    photos: {},
+    vidoes: {},
+  };
+
+  window.localStorage.setItem("favorite", JSON.stringify(favoriteObj));
+}
