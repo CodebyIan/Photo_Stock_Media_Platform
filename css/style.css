@@ -552,6 +552,23 @@ button:disabled {
   }
 }
 
+.card__badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  background-color: var(--light-secondary-container);
+  color: var(--light-on-secondary-container);
+  border-radius: var(--radius-small);
+}
+
+.card__badge .material-symbols-outlined {
+  font-size: 1.8rem;
+}
+
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -641,6 +658,10 @@ button:disabled {
 .card .icon__btn.active {
   color: var(--light-inverse-primary);
   --state-layer-bg: var(--light-inverse-primary);
+}
+
+.card.video {
+  background-color: var(--surface-container-highest);
 }
 
 /** Menu **/
@@ -1113,7 +1134,7 @@ button:disabled {
 /*-----------------------------------*\
   #CURATED PHOTOS & POPULAR VIDEO
 \*-----------------------------------*/
-:where(.featured__photo, .popular__videos) .column {
+:where(.featured__photo, .popular__video) .column {
   margin-block-end: -800px;
 }
 

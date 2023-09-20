@@ -38,7 +38,7 @@ window.filterObj = {};
 if (!window.localStorage.getItem("favorite")) {
   const favoriteObj = {
     photos: {},
-    vidoes: {},
+    videos: {},
   };
 
   window.localStorage.setItem("favorite", JSON.stringify(favoriteObj));

@@ -34,10 +34,8 @@ export const photoCard = (photo) => {
   const favoriteObj = JSON.parse(window.localStorage.getItem("favorite"));
 
   $card.innerHTML = ` 
-     <figure
-     class="card__banner"
-     style="--width: ${width}; --height: ${height}">
-         <img
+     <figure class="card__banner" style="--width: ${width}; --height: ${height}">
+       <img
          src="${large}"
          alt="${alt}"
          width="${width}"
@@ -47,19 +45,17 @@ export const photoCard = (photo) => {
      </figure>
 
      <div class="card__content">
-         <button class="icon__btn small ${
-           favoriteObj.photos[id] ? "active" : ""
-         }"
-          aria-label="Add To Favorites"
-          data-ripple
-          data-favorite-btn>
+       <button class="icon__btn small ${favoriteObj.photos[id] ? "active" : ""}"
+         aria-label="Add To Favorites"
+         data-ripple
+         data-favorite-btn>
          <span
            class="material-symbols-outlined leading-icon"
            aria-hidden="true">favorite</span>
 
-     <div class="state__layer"></div>
-         </button>
-     </div>
+         <div class="state__layer"></div>
+       </button>
+    </div>
 
      <a href="${root}/pages/photos/photo_detail.html?id=${id}" class="state__layer"></a>`;
 

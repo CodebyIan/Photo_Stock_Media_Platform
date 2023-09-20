@@ -18,8 +18,8 @@ const requestOptions = { headers };
 
 /**
  * Fetch Data From Pexel
- * @param {string} url Fetch URL
- * @param {function} successCallback Success Callback Function
+ * @param {String} url Fetch URL
+ * @param {Function} successCallback Success Callback Function
  */
 
 const fetchData = async function (url, successCallback) {
@@ -36,7 +36,7 @@ let requestUrl = "";
 
 const root = {
   default: "https://api.pexels.com/v1/",
-  vidoes: "https://api.pexels.com/videos/",
+  videos: "https://api.pexels.com/videos/",
 };
 
 export const client = {
@@ -81,7 +81,7 @@ export const client = {
      */
 
     search(parameters, callback) {
-      requestUrl = `${root.vidoes}search?${urlEncode(parameters)}`;
+      requestUrl = `${root.videos}search?${urlEncode(parameters)}`;
       fetchData(requestUrl, callback);
     },
 
@@ -92,7 +92,7 @@ export const client = {
      */
 
     popular(parameters, callback) {
-      fetchData(`${root.vidoes}popular?${urlEncode(parameters)}`, callback);
+      fetchData(`${root.videos}popular?${urlEncode(parameters)}`, callback);
     },
 
     /**
@@ -102,7 +102,7 @@ export const client = {
      */
 
     detail(id, callback) {
-      fetchData(`${root.vidoes} videos/${id}`, callback);
+      fetchData(`${root.videos}videos/${id}`, callback);
     },
   },
 
