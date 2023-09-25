@@ -10,6 +10,7 @@ import { client } from "./api_configure.js";
 import { gridInit, updateGrid } from "./utils/masonry_grid.js";
 import { photoCard } from "./photo_card.js";
 import { videoCard } from "./video_card.js";
+import { collectionCard } from "./collection_card.js";
 
 /**
  * Render Curated Photos On Home Page
@@ -45,5 +46,18 @@ client.videos.popular({ page: 1, per_page: 20 }, (data) => {
     const $videoCard = videoCard(video);
 
     updateGrid($videoCard, videoGrid.columnsHeight, videoGrid.$columns);
+  });
+});
+
+/**
+ * Render Collections On Home Page
+ */
+const $collectionGrid = document.querySelector("[data-collection-grid]");
+
+client.collections.featured({ per_page: 18 }, (data) => {
+  data.collections.forEach((collection) => {
+    const $collectionCard = collectionCard(collection);
+
+    $collectionGrid.appendChild($collectionCard);
   });
 });

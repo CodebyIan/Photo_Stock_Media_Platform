@@ -881,6 +881,23 @@ button:disabled {
   color: var(--on-surface);
 }
 
+.list__item.two__line {
+  justify-content: space-between;
+  padding: 12px;
+  height: 72px;
+}
+
+.list__item.two__line .body__large {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.list__item.two__line > .state__layer {
+  pointer-events: all;
+}
+
 /** Navbar **/
 .navbar {
   --navbar-drawer-width: 320px;
@@ -1141,6 +1158,18 @@ button:disabled {
 /*-----------------------------------*\
   #COLLECTION
 \*-----------------------------------*/
+.card__grid .label {
+  color: var(--on-surface-variant);
+}
+
+.collection__grid .list__item {
+  border-block-end: 1px solid var(--outline-variant);
+}
+
+.collection .btn {
+  margin-block: 12px;
+  margin-inline: auto;
+}
 
 /*-----------------------------------*\
   #FOOTER
