@@ -132,65 +132,35 @@ Featured collections
 Leaves
 59 media
 
-Online Shopping
-48 media
-
-Teamwork
-30 media
-
-Parks
-34 media
-
-Horror
-61 media
-
-Shake Hands
-42 media
-
-Dance
-59 media
-
-Law
-30 media
-
-Business Meetings
-34 media
-
-Apples
-50 media
-
-Massages
-26 media
-
-Classrooms
-33 media
-
 More collections
-
 
 
 #---------- FOOTER ----------#
 
 Pixxar
 
-Pixxar is a stock photo app developed by codewithsadee and all Photos and Videos provided by Pexels.
+Pixxar is a stock photo app developed by codeBYian and all Photos and Videos provided by Pexels.
 
-Follow Me On
+Follow Me On:
 
-href = https://youtube.com
-YouTube
 
-href = https://github.com
-GitHub
-
-href = https://twitter.com
+href = "https://twitter.com/codebyian"
 Twitter
+
+href = "https://www.facebook.com/smrtlivin/"
+Facebook
+
+href = "https://www.instagram.com/iamucheru/"
+Instagram
+
+href = "https://github.com/Cannz"
+GitHub
 
 
 
 #---------- ALL PHOTO PAGE ----------#
 
-Curated photos -Pixxar
+Curated photos - Pixxar
 
 Curated photos
 

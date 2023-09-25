@@ -569,6 +569,10 @@ button:disabled {
   font-size: 1.8rem;
 }
 
+.color__primary {
+  color: var(--primary);
+}
+
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -1174,6 +1178,35 @@ button:disabled {
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
+.footer {
+  margin-block-start: 24px;
+  padding-block-end: 16px;
+}
+
+.footer__card {
+  background-color: var(--surface-container);
+  color: var(--on-surface-variant);
+  padding: 16px;
+  border-radius: var(--radius-large);
+}
+
+.footer__card .text {
+  line-height: 18px;
+  margin-block: 8px 16px;
+  max-width: 310px;
+}
+
+.footer__card :where(span, a) {
+  display: inline-block;
+}
+
+.footer__card a:not(.logo):hover {
+  text-decoration: underline;
+}
+
+.footer__card .title {
+  margin-block-end: 4px;
+}
 
 /*-----------------------------------*\
   #PHOTO PAGE
