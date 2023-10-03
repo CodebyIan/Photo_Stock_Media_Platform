@@ -482,6 +482,10 @@ button:disabled {
   overflow: hidden;
 }
 
+.display__message {
+  color: var(--primary);
+}
+
 .img__cover {
   width: 100%;
   height: 100%;
@@ -831,6 +835,37 @@ button:disabled {
 }
 
 /** Split btn **/
+.split__btn {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.split__btn .label {
+  --state-layer-bg: var(--on-primary);
+  padding-inline: 16px;
+  height: inherit;
+  display: grid;
+  place-items: center;
+  border-inline-end: 1px solid var(--outline-variant);
+}
+
+.split__btn .trailing__icon {
+  --state-layer-bg: var(--on-primary);
+  color: inherit;
+  height: inherit;
+  width: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.split__btn .material-symbols-outlined {
+  font-size: 1.8rem;
+}
 
 /*-----------------------------------*\
   #TOP APP BAR
@@ -1386,6 +1421,62 @@ button:disabled {
 /*-----------------------------------*\
   #PHOTO DETAIL PAGE
 \*-----------------------------------*/
+.detail :is(.main, .footer) {
+  margin-inline-start: 0;
+}
+
+.detail .top__app-bar {
+  left: 0;
+  width: 100%;
+  gap: 4px;
+}
+
+.detail .top__app-bar .icon__btn:first-child {
+  display: grid;
+}
+
+.detail .top__app-bar .logo {
+  display: block;
+}
+
+.detail .menu__wrapper {
+  margin-inline-start: auto;
+}
+
+.detail .menu__wrapper .menu {
+  transform-origin: top right;
+  text-transform: capitalize;
+  left: auto;
+  right: 0;
+}
+
+.detail__wrapper {
+  height: 588px;
+  display: grid;
+  grid-template-rows: 1fr max-content;
+  place-items: center;
+}
+
+.detail__banner {
+  max-width: 100%;
+  max-height: 100%;
+  margin-inline: auto;
+  border-radius: var(--radius-large);
+  margin-block-end: 8px;
+  overflow: hidden;
+}
+
+.detail__wrapper .title__small {
+  text-align: center;
+}
+
+.detail__wrapper .color__primary {
+  display: inline-block;
+}
+
+.detail .title__large {
+  margin-block: 32px 16px;
+}
 
 /*-----------------------------------*\
   #FAVORITE PAGE

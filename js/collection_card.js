@@ -19,11 +19,10 @@ export const collectionCard = (collection) => {
   const { id, title, media_count } = collection;
 
   const $card = document.createElement("div");
-  $card.classList.add("grid__card", "list__item", "two-line");
+  $card.classList.add("grid__card", "two__line", "list__item");
   $card.setAttribute("title", title);
 
   $card.innerHTML = `
-     <div class="grid__card list__item two__line" data-ripple>
          <div>
              <h3 class="body__large">
                  ${title}
@@ -33,7 +32,6 @@ export const collectionCard = (collection) => {
          </div>
          <a href="${root}/pages/collections/collection_detail.html?collectionId=${id}&title=${title}"
          class="state__layer"></a>
-     </div>
   `;
 
   ripple($card);

@@ -160,7 +160,7 @@ GitHub
 
 #---------- ALL PHOTO PAGE ----------#
 
-Curated photos - Pixxar
+Curated Photos
 
 Curated photos
 
@@ -188,9 +188,9 @@ Color
 
 #---------- PHOTO DETAIL PAGE ----------#
 
-Photo detail - Pixxar
+Photo Details
 
-aria-label = Back to previous page
+aria-label = Back To Previous Page
 <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
 
 Download
@@ -202,7 +202,7 @@ Large
 Medium
 Small
 
-aria-label = add to favorite
+aria-label = Add To Favorite
 <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
 
 Photograph by 
@@ -214,7 +214,7 @@ More like this
 
 #---------- POPULAR VIDEO PAGE ----------#
 
-Popular videos - Pixxar
+Popular videos
 
 Popular videos
 
@@ -222,7 +222,7 @@ Popular videos
 
 #---------- POPULAR COLLECTION PAGE ----------#
 
-Featured collections - PiPixxar
+Featured collections
 
 Featured collections
 
@@ -230,4 +230,4 @@ Featured collections
 
 #---------- FAVORITE PAGE ----------#
 
-Favorites - Pixxar
+Favorites

@@ -45,14 +45,17 @@ if (window.location.search.slice(1)) {
     window.filterObj[filterKey] = filterValue;
 
     if (filterKey !== "query") {
-      const $filterItem = document.querySelector(`[data-filter="${filterKey}"`);
+      const $filterItem = document.querySelector(
+        `[data-filter="${filterKey}"]`
+      );
       $filterItem
         ?.querySelector("[data-filter-chip]")
         .classList.add("selected");
 
-      if ($filterItem)
+      if ($filterItem) {
         $filterItem.querySelector("[data-filter-value]").innerText =
           filterValue;
+      }
     }
   });
 }
