@@ -8,6 +8,7 @@
 /*** Imports ***/
 import { ripple } from "./utils/ripple.js";
 import { addEventOnElements } from "./utils/event.js";
+import { urlDecode } from "./utils/urlDecode.js";
 
 /*** Header On-Scroll State ***/
 const /** {NodeElement} */ $header = document.querySelector("[data-header]");
@@ -34,6 +35,28 @@ addEventOnElements($navTogglers, "click", function () {
 /*** Filter Function ***/
 window.filterObj = {};
 
+/*** Show All Filtered Options After Reload ***/
+if (window.location.search.slice(1)) {
+  const search = urlDecode(window.location.search.slice(1));
+
+  Object.entries(search).forEach((item) => {
+    const filterKey = item[0];
+    const filterValue = item[1];
+    window.filterObj[filterKey] = filterValue;
+
+    if (filterKey !== "query") {
+      const $filterItem = document.querySelector(`[data-filter="${filterKey}"`);
+      $filterItem
+        ?.querySelector("[data-filter-chip]")
+        .classList.add("selected");
+
+      if ($filterItem)
+        $filterItem.querySelector("[data-filter-value]").innerText =
+          filterValue;
+    }
+  });
+}
+
 /*** Initial Favorite Object In Local Storage ***/
 if (!window.localStorage.getItem("favorite")) {
   const favoriteObj = {
@@ -43,3 +66,12 @@ if (!window.localStorage.getItem("favorite")) {
 
   window.localStorage.setItem("favorite", JSON.stringify(favoriteObj));
 }
+
+/*** Page Transition ***/
+window.addEventListener("loadstart", function () {
+  document.body.style.opacity = "0";
+});
+
+window.addEventListener("DOMContentLoaded", function () {
+  document.body.style.opacity = "1";
+});

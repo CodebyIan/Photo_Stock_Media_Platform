@@ -294,7 +294,7 @@ body {
   min-height: 100vh;
   transition: opacity var(--motion-duration-medium-2)
     var(--motion-easing-linear);
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 button:disabled {
@@ -573,6 +573,54 @@ button:disabled {
   color: var(--primary);
 }
 
+/*** Photos.html ***/
+.page__title {
+  margin-block-end: 16px;
+}
+
+.filter__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-block: 16px;
+}
+
+.menu__wrapper {
+  position: relative;
+  max-width: max-content;
+}
+
+.menu__wrapper:has(.expanded) {
+  z-index: 2;
+}
+
+.menu__wrapper .menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.load__more {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--primary);
+  border-radius: var(--radius-full);
+  border-right-color: transparent;
+  margin: 20px auto;
+  animation: loading 500ms linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -669,8 +717,118 @@ button:disabled {
 }
 
 /** Menu **/
+.menu {
+  padding-block: 8px;
+  max-width: 280px;
+  min-width: 120px;
+  width: max-content;
+  background-color: var(--surface-container);
+  border-radius: var(--radius-small);
+  box-shadow: var(--elevation-2);
+  overflow: hidden;
+  transform-origin: top left;
+  scale: 0.5;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--motion-duration-short-2) var(--motion-easing-standard);
+  transition-property: scale, opacity;
+}
 
-/** Filter chip **/
+.menu.expanded {
+  scale: 1;
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu__item {
+  height: 36px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-inline: 12px;
+  --state-layer-bg: var(--on-surface);
+  color: var(--on-surface);
+}
+
+.menu__item .trailing-text {
+  color: var(--on-surface-variant);
+  margin-inline-start: auto;
+}
+
+/*** Filter chip ***/
+/** Photo.html **/
+.filter__chip {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--outline);
+  border-radius: var(--radius-small);
+  transition: var(--motion-duration-short-2) var(--motion-easing-linear);
+  transition-property: box-shadow, border-color;
+  overflow: hidden;
+}
+
+.filter__chip:focus-within:not(:active) {
+  border-color: var(--on-surface-variant);
+}
+
+.filter__chip .chip__content {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  padding-inline: 8px;
+}
+
+.filter__chip :where(.chip__content, .close__icon) {
+  color: var(--on-surface-variant);
+  --state-layer-bg: var(--on-surface-variant);
+}
+
+.filter__chip .material-symbols-outlined {
+  font-size: 1.8rem;
+}
+
+.filter__chip .text {
+  padding-inline: 8px;
+  text-transform: capitalize;
+}
+
+.filter__chip :where(.leading-icon, .close__icon) {
+  min-width: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: var(--motion-duration-short-2) var(--mottion-easing-emphasized);
+}
+
+.filter__chip.selected {
+  background-color: var(--secondary-container);
+  border: none;
+}
+
+.filter__chip.selected :where(.chip__content, .close__icon) {
+  color: var(--on-secondary-container);
+  --state-layer-bg: var(--on-secondary-container);
+}
+
+.filter__chip.selected:hover {
+  box-shadow: var(--elevation-1);
+}
+
+.filter__chip.selected :where(.leading-icon, .close__icon) {
+  min-width: min-content;
+  width: min-content;
+  visibility: visible;
+}
+
+.filter__chip.selected .arrow__icon {
+  display: none;
+}
+
+.filter__chip.selected .close__icon {
+  padding: 8px;
+}
 
 /** Split btn **/
 
@@ -1211,6 +1369,19 @@ button:disabled {
 /*-----------------------------------*\
   #PHOTO PAGE
 \*-----------------------------------*/
+.filter__chip:has(.color__field) {
+  position: relative;
+}
+
+.color__field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
 
 /*-----------------------------------*\
   #PHOTO DETAIL PAGE

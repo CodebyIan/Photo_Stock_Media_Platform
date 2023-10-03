@@ -10,6 +10,7 @@ import { ripple } from "./utils/ripple.js";
 import { addEventOnElements } from "./utils/event.js";
 import { segment } from "./segment_btn.js";
 import { updateUrl } from "./utils/updateUrl.js";
+import { urlDecode } from "./utils/urlDecode.js";
 
 /*** Search View Toggle In Small Devices */
 
@@ -85,9 +86,7 @@ const updateSearchHistory = (searchValue) => {
   window.localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 };
 
-/**
- * Render Search History Items In Search List
- **/
+/*** Render Search History Items In Search List ***/
 
 const $searchList = document.querySelector("[data-search-list]");
 const historyLen = searchHistory.items.length;
@@ -113,3 +112,8 @@ for (let i = 0; i < historyLen && i <= 5; i++) {
 
   $searchList.appendChild($listItem);
 }
+
+/*** Show Search Value In Search Field After Reload **/
+const search = urlDecode(window.location.search.slice(1));
+
+if (search.query) $searchField.value = search.query;
