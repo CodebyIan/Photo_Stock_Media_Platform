@@ -37,7 +37,7 @@ let currentPage = 1;
 let totalPage = 1;
 const searchUrl = window.location.search.slice(1);
 let searchObj = searchUrl && urlDecode(searchUrl);
-const title = searchObj ? `${searchObj.query} photos` : "Curated Photos";
+const title = searchObj ? `${searchObj.query} Photos` : "Curated Photos";
 
 $title.textContent = title;
 document.title = title;
