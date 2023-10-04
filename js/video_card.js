@@ -60,7 +60,7 @@ export const videoCard = (video) => {
          <span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
      </span>
      
-     <a href="${root}/pages/videos/video_detail.html.html?id=${id}" class="state__layer"></a>`;
+     <a href="${root}/pages/videos/video_detail.html?id=${id}" class="state__layer"></a>`;
 
   const $rippleElems = [$card, $card.querySelector("[data-ripple")];
 

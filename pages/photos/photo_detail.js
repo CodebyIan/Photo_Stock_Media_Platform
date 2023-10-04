@@ -71,10 +71,10 @@ client.photos.detail(photoId, (data) => {
          <figure class="detail__banner" style="aspect-ratio: ${width} / ${height};
                  background-color: ${avg_color}">
              <img src="${src.large2x}"
-                 widht="${width}" height="${height}" alt="${alt}" class="img__cover" />
+                 width="${width}" height="${height}" alt="${alt}" class="img__cover" />
          </figure>
 
-         <p class="title__small"> Photographed by 
+         <p class="title__small author__name"> Photographed by 
              <span class="color__primary">${photographer}</span>
          </p>`;
 
