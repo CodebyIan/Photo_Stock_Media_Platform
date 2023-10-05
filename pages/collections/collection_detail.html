@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Collection Details" />
+    <meta
+      name="description"
+      content="This is a stock media app made by Ian Mucheru"
+    />
+
+    <!-- Link Tags -->
+    <link rel="shortcut icon" href="../../favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icon Link -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0"
+    />
+
+    <!--CSS Link -->
+    <link rel="stylesheet" href="../../css/style.css" />
+
+    <!-- Script Link -->
+    <script src="../../js/theme.js" type="module"></script>
+    <script src="../../js/global.js" type="module"></script>
+    <script src="../../js/search.js" type="module"></script>
+    <script src="./collection_detail.js" type="module"></script>
+
+    <title>Curated photos</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="top__app-bar" data-header>
+      <button
+        class="icon__btn"
+        aria-label="Open menu"
+        data-nav-toggler
+        data-ripple
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+
+        <!-- <div class="ripple"></div> -->
+        <div class="state__layer"></div>
+      </button>
+
+      <a href="/" class="logo">Pixxar</a>
+
+      <div class="search__view" data-search-view>
+        <div class="search__bar">
+          <button
+            class="icon__btn search__open"
+            aria-label="Close search"
+            data-search-toggler
+            data-ripple
+          >
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >arrow_back</span
+            >
+
+            <div class="state__layer"></div>
+          </button>
+
+          <div class="input__wrapper">
+            <input
+              type="search"
+              name="search"
+              placeholder="Search ..."
+              class="input__field body__large"
+              autocomplete="off"
+              data-search-field
+            />
+          </div>
+
+          <button
+            class="icon__btn"
+            aria-label="Clear search"
+            data-search-clear-btn
+            data-ripple
+          >
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >close</span
+            >
+
+            <div class="state__layer"></div>
+          </button>
+
+          <button
+            class="icon__btn search__btn"
+            aria-label="Submit search"
+            data-search-toggler
+            data-ripple
+            data-search-btn
+          >
+            <span class="material-symbols-outlined" aria-hidden="true"
+              >search</span
+            >
+
+            <div class="state__layer"></div>
+          </button>
+
+          <div class="state__layer"></div>
+        </div>
+
+        <div class="search__view-content">
+          <div class="btn__group" data-segment="search">
+            <button
+              class="btn__segment selected"
+              data-ripple
+              data-segment-btn
+              data-segment-value="photos"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >image</span
+              >
+
+              <div class="label__large text">Photos</div>
+
+              <div class="state__layer"></div>
+            </button>
+
+            <button
+              class="btn__segment"
+              data-ripple
+              data-segment-btn
+              data-segment-value="Videos"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >videocam</span
+              >
+
+              <div class="label__large text">Videos</div>
+
+              <div class="state__layer"></div>
+            </button>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="list" data-search-list></div>
+        </div>
+      </div>
+
+      <button
+        class="icon__btn search__open"
+        aria-label="Open search"
+        data-search-toggler
+        data-ripple
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">search</span>
+
+        <div class="state__layer"></div>
+      </button>
+
+      <button
+        class="icon__btn theme__btn"
+        aria-label="Switch theme"
+        data-theme-toggler
+        data-ripple
+      >
+        <span class="material-symbols-outlined dark-icon" aria-hidden="true"
+          >dark_mode</span
+        >
+
+        <span class="material-symbols-outlined light-icon" aria-hidden="true"
+          >light_mode</span
+        >
+
+        <div class="state__layer"></div>
+      </button>
+    </header>
+
+    <!-- NavBar -->
+    <nav class="navbar" data-navbar>
+      <div class="navbar__header">
+        <button
+          class="icon__btn"
+          aria-label="Close menu"
+          data-ripple
+          data-nav-toggler
+        >
+          <span class="material-symbols-outlined" aria-hidden="true"
+            >arrow_back</span
+          >
+
+          <div class="state__layer"></div>
+        </button>
+
+        <a href="#" class="logo">Pixxar</a>
+      </div>
+
+      <ul class="drawer__list">
+        <li class="drawer__item">
+          <a href="/" class="drawer__link" data-drawer-link>
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >home</span
+            >
+
+            <span class="label__large">Home</span>
+
+            <div class="state__layer"></div>
+          </a>
+        </li>
+
+        <li class="drawer__item">
+          <a href="../photos/photos.html" class="drawer__link" data-drawer-link>
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >image</span
+            >
+
+            <span class="label__large">Photos</span>
+
+            <div class="state__layer"></div>
+          </a>
+        </li>
+
+        <li class="drawer__item">
+          <a href="../videos/videos.html" class="drawer__link" data-drawer-link>
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >videocam</span
+            >
+
+            <span class="label__large">Videos</span>
+
+            <div class="state__layer"></div>
+          </a>
+        </li>
+
+        <li class="drawer__item">
+          <a
+            href="./collection.html"
+            class="drawer__link active"
+            data-drawer-link
+          >
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >auto_awesome_mosaic</span
+            >
+
+            <span class="label__large">Collections</span>
+
+            <div class="state__layer"></div>
+          </a>
+        </li>
+
+        <li class="drawer__item">
+          <a
+            href="../favorite/favorite.html"
+            class="drawer__link"
+            data-drawer-link
+          >
+            <span
+              class="material-symbols-outlined leading-icon"
+              aria-hidden="true"
+              >favorite</span
+            >
+
+            <span class="label__large">Favorites</span>
+
+            <div class="state__layer"></div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main -->
+    <main class="main">
+      <article class="container">
+        <h2 class="page__title title__large" data-title>Collection Details</h2>
+
+        <div class="media__grid" data-collection-grid></div>
+
+        <div class="load__more" data-loader role="progressbar"></div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__card">
+          <div class="col">
+            <a href="/" class="logo">Pixxar</a>
+
+            <p class="text body__small">
+              Pixxar is a stock photo/video app developed by
+              <span class="color__primary"
+                ><a href="https://ian-mucheru.netlify.app/" target="_blank">
+                  codeByIan</a
+                ></span
+              >, with the API provided by
+              <span class="color__primary">
+                <a href="https://www.pexels.com/" target="_blank">Pexel.</a>
+              </span>
+            </p>
+          </div>
+
+          <div class="col">
+            <p class="title label__medium">Find Me On:</p>
+
+            <div class="social__list">
+              <a
+                href="https://twitter.com/codebyian"
+                target="_blank"
+                class="label__small color__primary"
+                >Twitter</a
+              >
+
+              <a
+                href="https://www.facebook.com/smrtlivin/"
+                target="_blank"
+                class="label__small color__primary"
+                >FaceBook</a
+              >
+
+              <a
+                href="https://www.instagram.com/iamucheru/"
+                target="_blank"
+                class="label__small color__primary"
+                >Instagram</a
+              >
+
+              <a
+                href="https://github.com/Cannz"
+                target="_blank"
+                class="label__small color__primary"
+                >Github</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scrim -->
+    <div class="scrim" data-scrim data-nav-toggler></div>
+  </body>
+</html>
