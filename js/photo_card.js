@@ -46,7 +46,7 @@ export const photoCard = (photo) => {
 
      <div class="card__content">
        <button class="icon__btn small ${favoriteObj.photos[id] ? "active" : ""}"
-         aria-label="Add To Favorites"
+         aria-label="Add to favorites"
          data-ripple
          data-favorite-btn>
          <span

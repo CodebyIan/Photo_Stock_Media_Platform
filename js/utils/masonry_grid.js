@@ -8,7 +8,7 @@
 /**
  * Initial Columns
  * @param {Node} $gridContainer Grid Container
- * @returns {Object} Column $ Columns height Array
+ * @returns {Object} Column & Columns height Array
  */
 
 /*** Export ***/

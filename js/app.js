@@ -13,7 +13,7 @@ import { videoCard } from "./video_card.js";
 import { collectionCard } from "./collection_card.js";
 
 /**
- * Render Curated Photos On Home Page
+ * Render Popular Photos On Home Page
  */
 
 const $photoGrid = document.querySelector("[data-photo-grid]");

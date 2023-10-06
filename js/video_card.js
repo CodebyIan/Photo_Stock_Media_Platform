@@ -42,8 +42,8 @@ export const videoCard = (video) => {
      <div class="card__content">
          <button class="icon__btn small ${
            favoriteObj.videos[id] ? "active" : ""
-         }" 
-             aria-label="Add To Favorites"
+         }"
+             aria-label="Add to favorites"
              data-ripple
              data-favorite-btn>
                 <span class="material-symbols-outlined

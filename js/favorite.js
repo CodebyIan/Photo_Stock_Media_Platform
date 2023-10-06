@@ -21,7 +21,7 @@ export const favorite = ($element, type, id) => {
     $element.setAttribute("disabled", "");
     const favoriteObj = JSON.parse(window.localStorage.getItem("favorite"));
 
-    if (favoriteObj[type][id] !== undefined) {
+    if (favoriteObj[type][id]) {
       $element.classList.toggle("active");
       $element.removeAttribute("disabled");
 
